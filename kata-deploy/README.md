@@ -30,6 +30,11 @@ to aid in this:
 - `/var/run/dbus`, `/run/systemd`: this is require for reloading the the Docker service
 - `/etc/docker`: this is required for updating `daemon.json` in order to configure the Kata runtimes in Docker
 
+### Build K3s Kata-Deploy
+```
+wget https://github.com/kata-containers/runtime/releases/download/1.11.3/kata-static-1.11.3-x86_64.tar.xz
+docker build --build-arg KATA_ARTIFACTS=kata-static-1.11.3-x86_64.tar.xz -t "zhenyangzhao/kata-deploy:1.11.3-k3s" .
+```
 
 ### Install Kata and configure Docker
 
